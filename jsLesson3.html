@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <button class="select">赤を持つ</button> 
+   <button class="select">赤を持つ</button> 
    <button class="select">緑を持つ</button> 
    <button class="select">青を持つ</button> 
    <button onclick="writePen()">書く</button> 
@@ -30,13 +30,13 @@
                return msg;
            }
        }
-       const bts=document.querySelectorAll('.select');
-       let pens=[new ColorPen('赤',10),new ColorPen('緑',10),new ColorPen('青',10)];
+       const bts=document.querySelectorAll('.select');//querySelectorAll見つけたものを全部返す
+       let pens=[new ColorPen('赤',10),new ColorPen('緑',10),new ColorPen('青',10)];//配列を用意
        let pen=null;
        const info=document.getElementById('info');
-       for(let i=0;i<bts.length;i++){
+       for(let i=0;i<bts.length;i++){//配列といえばfor文
            bts[i].addEventListener('click',()=>{
-                pen=pens[i];
+                pen=pens[i];//i=0→赤、1→緑、2→青
                 info.textContent=pen.color+'を持った。';
            });
        }
